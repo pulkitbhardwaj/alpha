@@ -1,0 +1,19 @@
+{
+	"services": [
+		"http://localhost:8085/graphql",
+		"http://localhost:8085/graphql"
+	],
+	"gateway-port": 8082,
+	"private-port": 8083,
+	"metrics-port": 9009,
+	"log-level": "info",
+	"poll-interval": "5s",
+	"max-requests-per-query": 50,
+	"max-client-response-size": 1048576,
+	"id-field-name": "id",
+	"plugins": [
+		{
+			"name": "admin-ui"
+		}
+	]
+}
