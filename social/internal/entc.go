@@ -14,7 +14,7 @@ func main() {
 	ex, err := entgql.NewExtension(
 		entgql.WithWhereInputs(true),
 		entgql.WithSchemaGenerator(),
-		entgql.WithConfigPath("gqlgen.yml"),
+		entgql.WithConfigPath("../gqlgen.yml"),
 		entgql.WithSchemaPath("schema.graphql"),
 	)
 	if err != nil {

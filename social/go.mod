@@ -1,4 +1,4 @@
-module github.com/pulkitbhardwaj/alpha
+module github.com/pulkitbhardwaj/alpha/social
 
 go 1.20
 
