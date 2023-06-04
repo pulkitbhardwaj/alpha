@@ -1,4 +1,5 @@
 //go:build ignore
+// +build ignore
 
 package main
 
@@ -11,11 +12,15 @@ import (
 )
 
 func main() {
+
 	ex, err := entgql.NewExtension(
+		entgql.WithRelaySpec(true),
+		entgql.WithNodeDescriptor(true),
+		entgql.WithWhereFilters(true),
 		entgql.WithWhereInputs(true),
 		entgql.WithSchemaGenerator(),
 		entgql.WithConfigPath("../gqlgen.yml"),
-		entgql.WithSchemaPath("schema.graphql"),
+		entgql.WithSchemaPath("graph.graphql"),
 	)
 	if err != nil {
 		log.Fatalf("creating entgql extension: %v", err)
@@ -23,4 +28,5 @@ func main() {
 	if err := entc.Generate("./schema", &gen.Config{}, entc.Extensions(ex)); err != nil {
 		log.Fatalf("running ent codegen: %v", err)
 	}
+
 }
