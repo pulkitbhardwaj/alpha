@@ -1,5 +1,4 @@
 //go:build ignore
-// +build ignore
 
 package main
 
@@ -20,7 +19,7 @@ func main() {
 		entgql.WithWhereInputs(true),
 		entgql.WithSchemaGenerator(),
 		entgql.WithConfigPath("../gqlgen.yml"),
-		entgql.WithSchemaPath("graph.graphql"),
+		entgql.WithSchemaPath("internal.graphql"),
 	)
 	if err != nil {
 		log.Fatalf("creating entgql extension: %v", err)

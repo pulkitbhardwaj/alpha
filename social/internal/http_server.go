@@ -1,4 +1,4 @@
-package main
+package internal
 
 import (
 	"context"
@@ -9,7 +9,7 @@ import (
 	"go.uber.org/fx"
 )
 
-func NewHTTPServer(lc fx.Lifecycle, handler http.Handler) {
+func HTTPServer(lc fx.Lifecycle, handler http.Handler) {
 	srv := &http.Server{
 		Handler: handler,
 		Addr:    ":8080",

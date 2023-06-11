@@ -3,7 +3,6 @@ package main
 import (
 	"go.uber.org/fx"
 
-	"github.com/99designs/gqlgen/graphql"
 	"github.com/pulkitbhardwaj/alpha/social/internal"
 )
 
@@ -13,11 +12,11 @@ import (
 type Resolver struct {
 	fx.In
 
-	graph internal.Graph
+	// graph internal.Graph
 }
 
-func NewGraphQLSchema(r Resolver) graphql.ExecutableSchema {
-	return internal.NewExecutableSchema(internal.Config{
+func Config(r Resolver) internal.Config {
+	return internal.Config{
 		Resolvers: &r,
-	})
+	}
 }

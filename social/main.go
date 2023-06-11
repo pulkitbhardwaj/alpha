@@ -1,12 +1,17 @@
 package main
 
-import "go.uber.org/fx"
+import (
+	"go.uber.org/fx"
+
+	"github.com/pulkitbhardwaj/alpha/social/auth"
+	"github.com/pulkitbhardwaj/alpha/social/internal"
+)
 
 func main() {
 	fx.New(
-		fx.Provide(NewSQLGraph),
-		fx.Provide(NewGraphQLSchema),
-		fx.Provide(NewGraphQLHandler),
-		fx.Invoke(NewHTTPServer),
-	).Run()
+		fx.Provide(Config),
+		internal.Module,
+		auth.Module,
+	).
+		Run()
 }
